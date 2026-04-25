@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site";
 import { ContactInfoBanner } from "./ContactInfoBanner";
@@ -45,12 +46,21 @@ export const NavBar = () => {
           >
             Get a Quote
           </a>
-          <details className="relative md:hidden">
+          <details className="group relative md:hidden">
             <summary
-              className="color-fade font-display flex h-10 cursor-pointer list-none items-center gap-2 border-2 border-border bg-surface px-3 text-xs font-semibold uppercase tracking-widest text-foreground marker:hidden shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent"
-              aria-label="Open menu"
+              className="color-fade flex h-10 w-10 cursor-pointer list-none items-center justify-center border-2 border-border bg-surface text-foreground marker:hidden shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent"
+              aria-label="Open navigation menu"
             >
-              Menu
+              <Menu
+                className="h-5 w-5 shrink-0 group-open:hidden"
+                strokeWidth={2}
+                aria-hidden
+              />
+              <X
+                className="hidden h-5 w-5 shrink-0 group-open:block"
+                strokeWidth={2}
+                aria-hidden
+              />
             </summary>
             <div className="absolute right-0 mt-2 w-52 border-2 border-border bg-surface p-1 shadow-[0_16px_48px_rgb(0_0_0_/_0.45)]">
               {navItems.map((item) => (

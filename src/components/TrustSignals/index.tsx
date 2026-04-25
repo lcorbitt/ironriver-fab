@@ -15,10 +15,10 @@ export const TrustSignals = () => {
 
   return (
     <section
-      className="border-b border-border bg-background py-16 sm:py-20"
+      className="border-b border-border bg-surface"
       aria-labelledby="home-services-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center hatch-diagonal py-16 sm:py-20">
         <Reveal className="mx-auto max-w-3xl pb-12 text-center sm:pb-14 md:pb-16">
           <h2
             id="home-services-heading"
@@ -61,8 +61,8 @@ export const TrustSignals = () => {
           ))}
         </ul>
 
-        <Link href={'/contact'} className="text-base font-medium leading-relaxed text-muted sm:text-lg p-4 border-2 border-border rounded-md hover:border-accent hover:text-accent">
-          Don't see what you're looking for? Give us a call!
+        <Link href={'/contact'} className="bg-surface text-sm font-medium leading-relaxed text-muted sm:text-lg p-4 border-2 border-border rounded-md hover:border-accent hover:text-accent">
+          {"Don't see what you're looking for? Give us a call!"}
         </Link>
       </div>
     </section>
