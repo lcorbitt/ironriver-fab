@@ -1,8 +1,8 @@
 import type { Testimonial } from "./types";
 
-export const TESTIMONIALS_EYEBROW = "Client feedback";
+export const TESTIMONIALS_EYEBROW = "Built Right";
 
-export const TESTIMONIALS_HEADING = "What Our Customers Say";
+export const TESTIMONIALS_HEADING = "Backed By Our Customers";
 
 export const TESTIMONIALS_SUBHEAD =
   "Property owners and crews across the Front Range trust us for field repairs, custom fab, and finishes that match the spec.";
