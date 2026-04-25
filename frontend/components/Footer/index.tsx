@@ -3,7 +3,11 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import { businessHours, siteConfig } from "@/lib/site";
-import { FOOTER_MENU_LINKS, FOOTER_QUICK_LINKS } from "./constants";
+import {
+  BITWERKS_SITE_URL,
+  FOOTER_MENU_LINKS,
+  FOOTER_QUICK_LINKS,
+} from "./constants";
 import { useFooter } from "./hooks/useFooter";
 
 export const Footer = () => {
@@ -96,9 +100,23 @@ export const Footer = () => {
             </dl>
           </div>
         </div>
-        <p className="mt-14 border-t border-border pt-8 font-mono text-[11px] uppercase tracking-widest text-steel text-center">
-          © 2019-{year} {siteConfig.legalName}. Northern Colorado & Surrounding Areas.
-        </p>
+        <div className="mt-14 flex flex-col items-center justify-center gap-3 border-t border-border pt-8 text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
+          <p className="font-mono text-[11px] uppercase tracking-widest text-steel">
+            © 2019-{year} {siteConfig.legalName}. Northern Colorado & Surrounding
+            Areas.
+          </p>
+          <p className="font-mono text-[11px] uppercase tracking-widest text-steel">
+            Website by:{" "}
+            <a
+              href={BITWERKS_SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="color-fade font-semibold text-foreground underline decoration-steel/50 underline-offset-4 transition-colors duration-600 hover:text-accent hover:decoration-accent/50"
+            >
+              BitWerks
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

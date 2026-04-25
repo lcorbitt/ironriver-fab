@@ -1,5 +1,8 @@
 import type { FooterLink } from "./types";
 
+/** Credit link; change if your live URL differs. */
+export const BITWERKS_SITE_URL = "https://bitwerks.com";
+
 export const FOOTER_MENU_LINKS: readonly FooterLink[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
