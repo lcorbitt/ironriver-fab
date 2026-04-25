@@ -25,13 +25,12 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-const ogImage =
-  "https://images.unsplash.com/photo-1504917595217-d002dc953781?auto=format&fit=crop&w=1200&h=630&q=80";
+const defaultOgImage = absoluteUrl("/ir-logo.png");
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
+    default: `${siteConfig.businessName} | Expert Welding Services in Northern Colorado & Surrounding Areas`,
     template: `%s | ${siteConfig.businessName}`,
   },
   description: siteConfig.description,
@@ -50,22 +49,20 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: absoluteUrl("/"),
     siteName: siteConfig.businessName,
-    title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
+    title: `${siteConfig.businessName} | Expert Welding Services in Northern Colorado & Surrounding Areas`,
     description: siteConfig.description,
     images: [
       {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Precision metal fabrication and welding",
+        url: defaultOgImage,
+        alt: `${siteConfig.businessName} logo`,
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
+    card: "summary",
+    title: `${siteConfig.businessName} | Expert Welding Services in Northern Colorado & Surrounding Areas`,
     description: siteConfig.description,
-    images: [ogImage],
+    images: [defaultOgImage],
   },
   robots: {
     index: true,

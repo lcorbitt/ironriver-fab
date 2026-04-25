@@ -17,7 +17,7 @@ export const GalleryPreview = ({ className }: GalleryPreviewProps) => {
   return (
     <section
       className={cn(
-        "border-b border-border bg-background py-20 sm:py-28",
+        "border-b border-border bg-surface py-20 sm:py-28",
         className,
       )}
       aria-labelledby="gallery-preview-heading"
@@ -38,7 +38,7 @@ export const GalleryPreview = ({ className }: GalleryPreviewProps) => {
           <Reveal>
             <Link
               href="/gallery"
-              className="font-display color-fade inline-flex h-12 items-center justify-center border-2 border-border bg-surface px-6 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent hover:text-accent"
+              className="font-display color-fade inline-flex h-12 items-center justify-center border-2 border-border bg-surface px-6 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.05)] hover:border-accent hover:text-accent"
             >
               View full gallery
             </Link>
@@ -47,20 +47,29 @@ export const GalleryPreview = ({ className }: GalleryPreviewProps) => {
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
-            <Reveal key={item.id}>
+            <Reveal key={item.id} variant="fade">
               <Link
                 href="/gallery"
-                className="group relative block aspect-4/5 overflow-hidden border-2 border-border bg-surface shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)]"
+                className={cn(
+                  "gallery-preview-card relative block aspect-4/5 overflow-hidden border-2 border-border bg-surface shadow-[inset_0_0_0_1px_rgb(255_255_255/0.04)]",
+                  /* Opt out of base `a { transition-colors }` (class must include "transition") */
+                  "transition-none",
+                )}
               >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
-                  className="object-cover transition-[transform,filter] duration-500 ease-industrial group-hover:scale-[1.04] group-hover:brightness-110"
+                <div className="gallery-preview-zoom absolute inset-0">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
+                    className="object-cover object-bottom"
+                  />
+                </div>
+                <div
+                  className="gallery-preview-overlay pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/25 to-transparent"
+                  aria-hidden
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent opacity-95 transition-opacity duration-300 ease-industrial group-hover:opacity-100" />
-                <div className="absolute inset-x-0 bottom-0 border-t-2 border-accent/80 bg-background/90 p-4 backdrop-blur-[2px]">
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 border-t-2 border-accent/80 bg-background/90 p-4 backdrop-blur-[2px]">
                   <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-steel-bright">
                     On the floor
                   </p>

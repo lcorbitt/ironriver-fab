@@ -11,7 +11,7 @@ export const Footer = () => {
 
   return (
     <footer className="border-t-2 border-border bg-surface">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md space-y-4">
             <p className="font-display text-lg font-bold uppercase tracking-[0.2em] text-foreground">
@@ -44,7 +44,7 @@ export const Footer = () => {
             <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
               Menu
             </p>
-            <div className="mt-3 h-px w-12 bg-accent/80" aria-hidden />
+            <div className="mt-3 h-px w-10 bg-accent/80" aria-hidden />
             <ul className="mt-4 space-y-2">
               {FOOTER_MENU_LINKS.map((link) => (
                 <li key={link.href}>
@@ -63,9 +63,9 @@ export const Footer = () => {
             className="lg:border-l-2 lg:border-border lg:pl-8"
           >
             <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
-              Quick links
+              Quick Links
             </p>
-            <div className="mt-3 h-px w-14 bg-accent/80" aria-hidden />
+            <div className="mt-3 h-px w-26 bg-accent/80" aria-hidden />
             <ul className="mt-4 space-y-2">
               {FOOTER_QUICK_LINKS.map((link) => (
                 <li key={link.href + link.label}>
@@ -80,9 +80,10 @@ export const Footer = () => {
             </ul>
           </nav>
           <div className="lg:border-l-2 lg:border-border lg:pl-8">
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
               Hours
             </p>
+            <div className="mt-3 h-px w-14 bg-accent/80" aria-hidden />
             <dl className="mt-4 grid grid-cols-[minmax(0,auto)_1fr] gap-x-2 gap-y-3 text-xs tabular-nums text-muted">
               {businessHours.map((row) => (
                 <Fragment key={row.dayLabel}>
@@ -95,7 +96,7 @@ export const Footer = () => {
             </dl>
           </div>
         </div>
-        <p className="mt-14 border-t border-border pt-8 font-mono text-[11px] uppercase tracking-widest text-steel">
+        <p className="mt-14 border-t border-border pt-8 font-mono text-[11px] uppercase tracking-widest text-steel text-center">
           © 2019-{year} {siteConfig.legalName}. Northern Colorado & Surrounding Areas.
         </p>
       </div>

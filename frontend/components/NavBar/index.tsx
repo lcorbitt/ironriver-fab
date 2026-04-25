@@ -2,14 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site";
 import { ContactInfoBanner } from "./ContactInfoBanner";
 import { useNavBar } from "./hooks/useNavBar";
 
 export const NavBar = () => {
-  const { navItems, isActive } = useNavBar();
+  const {
+    navItems,
+    isActive,
+    mobileMenuContainerRef,
+    isMobileMenuOpen,
+    toggleMobileMenu,
+    mobileNavMenuId,
+  } = useNavBar();
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-md">
@@ -58,23 +64,58 @@ export const NavBar = () => {
           >
             Get a Quote
           </a>
-          <details className="group relative md:hidden">
-            <summary
-              className="color-fade flex h-10 w-10 cursor-pointer list-none items-center justify-center border-2 border-border bg-surface text-foreground marker:hidden shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent"
-              aria-label="Open navigation menu"
+          <div
+            ref={mobileMenuContainerRef}
+            className="relative md:hidden"
+          >
+            <button
+              type="button"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls={mobileNavMenuId}
+              aria-label={
+                isMobileMenuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
+              onClick={toggleMobileMenu}
+              className="color-fade flex h-10 w-10 cursor-pointer items-center justify-center border-2 border-border bg-surface text-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.05)] hover:border-accent"
             >
-              <Menu
-                className="h-5 w-5 shrink-0 group-open:hidden"
-                strokeWidth={2}
-                aria-hidden
-              />
-              <X
-                className="hidden h-5 w-5 shrink-0 group-open:block"
-                strokeWidth={2}
-                aria-hidden
-              />
-            </summary>
-            <div className="absolute right-0 mt-2 w-52 border-2 border-border bg-surface p-1 shadow-[0_16px_48px_rgb(0_0_0_/_0.45)]">
+              <span className="relative block h-5 w-5" aria-hidden>
+                <span
+                  className={cn(
+                    "pointer-events-none absolute inset-0 flex h-5 w-5 flex-col justify-between py-0.5 opacity-100 transition-opacity duration-600 ease-in-out motion-reduce:transition-none",
+                    isMobileMenuOpen && "pointer-events-none opacity-0",
+                  )}
+                >
+                  <span className="block h-0.5 w-full shrink-0 rounded-full bg-current" />
+                  <span className="block h-0.5 w-full shrink-0 rounded-full bg-current" />
+                  <span className="block h-0.5 w-full shrink-0 rounded-full bg-current" />
+                </span>
+                <span
+                  className={cn(
+                    "pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-600 ease-in-out motion-reduce:transition-none",
+                    isMobileMenuOpen && "opacity-100",
+                  )}
+                >
+                  <span className="absolute h-0.5 w-5 origin-center rounded-full bg-current rotate-45" />
+                  <span className="absolute h-0.5 w-5 origin-center rounded-full bg-current -rotate-45" />
+                </span>
+              </span>
+            </button>
+            <div
+              id={mobileNavMenuId}
+              role="navigation"
+              aria-label="Primary mobile"
+              aria-hidden={!isMobileMenuOpen}
+              inert={!isMobileMenuOpen}
+              className={cn(
+                "absolute right-0 z-20 mt-2 w-52 border-2 border-border bg-surface p-1 shadow-[0_16px_48px_rgb(0_0_0/0.45)]",
+                "transition-opacity duration-600 ease-in-out motion-reduce:transition-none",
+                isMobileMenuOpen
+                  ? "opacity-100"
+                  : "pointer-events-none opacity-0",
+              )}
+            >
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -94,7 +135,7 @@ export const NavBar = () => {
                 {siteConfig.phoneDisplay}
               </a>
             </div>
-          </details>
+          </div>
         </div>
       </div>
     </header>

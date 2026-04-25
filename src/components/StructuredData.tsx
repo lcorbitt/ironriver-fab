@@ -55,7 +55,7 @@ const servicesJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": absoluteUrl("/#services"),
-  name: "Expert welding services in Northern Colorado & Surrounding Areas",
+  name: "Expert Welding Services in Northern Colorado & Surrounding Areas",
   provider: { "@id": absoluteUrl("/#business") },
   serviceType: [
     "Mobile Welding",
@@ -64,7 +64,7 @@ const servicesJsonLd = {
   ],
   areaServed: siteConfig.secondaryRegion,
   description:
-    "Expert welding services in Northern Colorado & Surrounding Areas.",
+    "Expert Welding Services in Northern Colorado & Surrounding Areas.",
 };
 
 export const StructuredData = () => (

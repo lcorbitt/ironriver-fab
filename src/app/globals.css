@@ -92,4 +92,39 @@
   .vignette-hero {
     box-shadow: inset 0 0 120px 40px rgb(15 14 12 / 0.75);
   }
+
+  /*
+    Gallery preview cards: plain CSS hover + transform-only transition.
+    Avoids Tailwind group-hover + filter/transform bundles that can snap in WebKit,
+    and keeps motion independent of the <a> base transition-colors rule.
+  */
+  .gallery-preview-zoom {
+    transform: scale(1);
+    transition: transform .25s cubic-bezier(0.45, 0, 0.55, 1);
+    transform-origin: center center;
+  }
+
+  .gallery-preview-card:hover .gallery-preview-zoom {
+    transform: scale(1.04);
+  }
+
+  .gallery-preview-overlay {
+    opacity: 0.95;
+    transition: opacity .25s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .gallery-preview-card:hover .gallery-preview-overlay {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-preview-zoom,
+    .gallery-preview-overlay {
+      transition: none;
+    }
+
+    .gallery-preview-card:hover .gallery-preview-zoom {
+      transform: scale(1);
+    }
+  }
 }

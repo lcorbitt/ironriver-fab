@@ -18,10 +18,18 @@ export const TrustSignals = () => {
       className="relative border-b border-border bg-surface"
       aria-labelledby="home-services-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-50 hatch-diagonal"
-        aria-hidden
-      />
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+        <div
+          className="absolute inset-0 opacity-45"
+          style={{
+            backgroundImage: "url(/metal-grate.jpg)",
+            backgroundRepeat: "repeat",
+            backgroundSize: "200px 200px",
+            backgroundPosition: "top left",
+          }}
+        />
+        <div className="absolute inset-0 bg-background/95" />
+      </div>
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
         <Reveal className="mx-auto max-w-3xl pb-12 text-center sm:pb-14 md:pb-16">
           <h2

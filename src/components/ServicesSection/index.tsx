@@ -26,7 +26,7 @@ export const ServicesSection = () => {
             {CAPABILITIES_EYEBROW}
           </h2>
           <p className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl">
-            Expert welding services in Northern Colorado & Surrounding Areas.
+            Expert Welding Services in Northern Colorado & Surrounding Areas.
           </p>
           <p className="text-base font-medium leading-relaxed text-foreground/78">
             {intro}
