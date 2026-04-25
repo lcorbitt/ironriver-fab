@@ -9,7 +9,7 @@ import {
 import { useContactForm } from "./hooks/useContactForm";
 
 const inputClass =
-  "mt-2 w-full rounded-sm border-2 border-border bg-background px-4 py-3.5 text-sm text-foreground outline-none ring-0 placeholder:text-steel shadow-[inset_0_2px_6px_rgb(0_0_0_/_0.2)] transition-[border-color,box-shadow] duration-300 ease-industrial focus:border-accent focus:ring-1 focus:ring-accent";
+  "color-fade mt-2 w-full rounded-sm border-2 border-border bg-background px-4 py-3.5 text-sm text-foreground outline-none ring-0 placeholder:text-steel shadow-[inset_0_2px_6px_rgb(0_0_0_/_0.2)] transition-shadow duration-300 ease-industrial focus:border-accent focus:ring-1 focus:ring-accent";
 
 const labelClass =
   "font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-steel-bright";
@@ -131,7 +131,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={state.status === "submitting"}
-          className="font-display inline-flex h-14 min-h-14 items-center justify-center border-2 border-accent bg-accent px-10 text-xs font-semibold uppercase tracking-[0.22em] text-accent-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.08)] transition-[background-color,border-color,opacity,transform] duration-300 ease-industrial hover:border-accent-hover hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-50"
+          className="font-display color-fade inline-flex h-14 min-h-14 items-center justify-center border-2 border-accent bg-accent px-10 text-xs font-semibold uppercase tracking-[0.22em] text-accent-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.08)] transition-[opacity,transform] duration-300 ease-industrial hover:border-accent-hover hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-50"
         >
           {state.status === "submitting" ? "Sending…" : "Send message"}
         </button>

@@ -27,8 +27,7 @@ export const ServicesSection = () => {
             {CAPABILITIES_EYEBROW}
           </h2>
           <p className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl">
-            Metal fabrication in {siteConfig.primaryCity},{" "}
-            {siteConfig.primaryState} — built for demanding sites.
+            Expert welding services in Northern Colorado & Surrounding Areas.
           </p>
           <p className="text-base font-medium leading-relaxed text-foreground/78">
             {intro}
@@ -37,14 +36,14 @@ export const ServicesSection = () => {
             Planning a build? Start with a{" "}
             <Link
               href="/contact"
-              className="font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors duration-300 ease-industrial hover:text-accent-hover"
+              className="color-fade font-semibold text-accent underline decoration-accent/40 underline-offset-4 hover:text-accent-hover"
             >
               detailed quote request
             </Link>{" "}
             or browse the{" "}
             <Link
               href="/gallery"
-              className="font-semibold text-foreground underline decoration-steel underline-offset-4 transition-colors duration-300 ease-industrial hover:text-accent"
+              className="color-fade font-semibold text-foreground underline decoration-steel underline-offset-4 hover:text-accent"
             >
               fabrication gallery
             </Link>{" "}

@@ -43,7 +43,7 @@ export const HeroSection = () => {
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[min(92vh,52rem)] max-w-6xl flex-col justify-center px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="relative z-10 mx-auto flex min-h-[min(92vh,52rem)] max-w-6xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8">
         <Reveal className="max-w-2xl space-y-8">
           <div className="space-y-4">
             <p className="inline-flex items-center gap-3 font-mono text-[11px] font-semibold uppercase tracking-[0.35em] text-steel-bright">
@@ -66,7 +66,7 @@ export const HeroSection = () => {
           {ctas.map((cta) => {
             const external = isExternalCta(cta);
             const className = cn(
-              "font-display inline-flex h-14 min-h-14 flex-1 items-center justify-center border-2 px-6 text-xs font-semibold uppercase tracking-[0.18em] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.06)] transition-[color,background-color,border-color,transform] duration-300 ease-industrial active:translate-y-px sm:px-8 sm:text-sm sm:tracking-[0.2em]",
+                  "font-display color-fade inline-flex h-14 min-h-14 flex-1 items-center justify-center border-2 px-6 text-xs font-semibold uppercase tracking-[0.18em] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.06)] transition-transform duration-300 ease-industrial active:translate-y-px sm:px-8 sm:text-sm sm:tracking-[0.2em]",
               cta.variant === "primary" &&
                 "border-accent bg-accent text-accent-foreground hover:border-accent-hover hover:bg-accent-hover",
               cta.variant === "secondary" &&

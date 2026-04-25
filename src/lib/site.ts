@@ -1,3 +1,15 @@
+export interface BusinessHoursRow {
+  dayLabel: string;
+  hoursLabel: string;
+}
+
+/** Optional URLs for the header utility bar; omit a key to hide that icon. */
+export interface SiteSocialLinks {
+  instagram?: string;
+  facebook?: string;
+  yelp?: string;
+}
+
 export interface SiteConfig {
   businessName: string;
   legalName: string;
@@ -6,6 +18,9 @@ export interface SiteConfig {
   primaryCity: string;
   primaryState: string;
   secondaryRegion: string;
+  /** Single line for the top contact bar (street, suite, city, etc.). */
+  contactAddressLine: string;
+  socialLinks: SiteSocialLinks;
   phoneDisplay: string;
   phoneE164: string;
   email: string;
@@ -16,6 +31,17 @@ export interface SiteConfig {
   };
 }
 
+/** Display strings for footer and contact; keep in sync with JSON-LD where applicable. */
+export const businessHours: readonly BusinessHoursRow[] = [
+  { dayLabel: "Mon", hoursLabel: "08:00 am – 05:00 pm" },
+  { dayLabel: "Tue", hoursLabel: "08:00 am – 05:00 pm" },
+  { dayLabel: "Wed", hoursLabel: "08:00 am – 05:00 pm" },
+  { dayLabel: "Thu", hoursLabel: "08:00 am – 05:00 pm" },
+  { dayLabel: "Fri", hoursLabel: "08:00 am – 05:00 pm" },
+  { dayLabel: "Sat", hoursLabel: "By Appointment" },
+  { dayLabel: "Sun", hoursLabel: "Closed" },
+];
+
 export const siteConfig: SiteConfig = {
   businessName: "IronRiver Fabrication",
   legalName: "IronRiver Fabrication",
@@ -25,9 +51,15 @@ export const siteConfig: SiteConfig = {
   primaryCity: "Berthoud",
   primaryState: "CO",
   secondaryRegion: "Northern Colorado",
-  phoneDisplay: "(970) 555-0142",
-  phoneE164: "+19705550142",
-  email: "hello@ironriverfab.com",
+  contactAddressLine: "Northern Colorado, USA",
+  socialLinks: {
+    instagram: undefined,
+    facebook: undefined,
+    yelp: undefined,
+  },
+  phoneDisplay: "(303) 775-3028",
+  phoneE164: "+13037753028",
+  email: "reece@ironriverfabrication.com",
   locale: "en_US",
   coordinates: {
     latitude: 40.3083,

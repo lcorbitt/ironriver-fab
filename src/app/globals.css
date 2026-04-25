@@ -55,13 +55,13 @@
     @apply bg-background text-foreground font-sans text-base antialiased;
   }
 
-  a:not([class*="transition"]) {
+  a:not([class*="color-fade"]):not([class*="transition"]) {
     @apply transition-colors duration-300;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  button,
-  [role="button"] {
+  button:not([class*="color-fade"]),
+  [role="button"]:not([class*="color-fade"]) {
     @apply transition-colors duration-300;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }

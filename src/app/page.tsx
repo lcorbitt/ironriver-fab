@@ -7,16 +7,16 @@ import { TrustSignals } from "@/components/TrustSignals";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Metal fabrication Berthoud & Northern Colorado",
+  title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
   description: siteConfig.description,
   alternates: { canonical: absoluteUrl("/") },
   openGraph: {
     url: absoluteUrl("/"),
-    title: `${siteConfig.businessName} | Metal fabrication Berthoud CO`,
+    title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
     description: siteConfig.description,
   },
   twitter: {
-    title: `${siteConfig.businessName} | Metal fabrication Berthoud CO`,
+    title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
     description: siteConfig.description,
   },
 };

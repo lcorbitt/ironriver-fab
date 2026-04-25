@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow, JetBrains_Mono, Oswald } from "next/font/google";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
+import { Footer } from "@frontend/components/Footer";
+import { NavBar } from "@frontend/components/NavBar";
 import { StructuredData } from "@/components/StructuredData";
 import { absoluteUrl, getSiteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -30,7 +30,7 @@ const ogImage =
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: `${siteConfig.businessName} | Metal fabrication Berthoud CO`,
+    default: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
     template: `%s | ${siteConfig.businessName}`,
   },
   description: siteConfig.description,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: absoluteUrl("/"),
     siteName: siteConfig.businessName,
-    title: `${siteConfig.businessName} | Metal fabrication Berthoud CO`,
+    title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
     description: siteConfig.description,
     images: [
       {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.businessName} | Metal fabrication Berthoud CO`,
+    title: `${siteConfig.businessName} | Expert welding services in Northern Colorado & Surrounding Areas`,
     description: siteConfig.description,
     images: [ogImage],
   },
@@ -90,9 +90,9 @@ export default function RootLayout({
           Skip to main content
         </a>
         <StructuredData />
-        <SiteHeader />
+        <NavBar />
         <div className="flex-1">{children}</div>
-        <SiteFooter />
+        <Footer />
       </body>
     </html>
   );

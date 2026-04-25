@@ -37,14 +37,14 @@ export default function ContactPage() {
             Prefer the phone? Call{" "}
             <a
               href={`tel:${siteConfig.phoneE164}`}
-              className="font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors duration-300 ease-industrial hover:text-accent-hover"
+              className="color-fade font-semibold text-accent underline decoration-accent/40 underline-offset-4 hover:text-accent-hover"
             >
               {siteConfig.phoneDisplay}
             </a>{" "}
             or return to the{" "}
             <Link
               href="/gallery"
-              className="font-semibold text-foreground underline decoration-steel underline-offset-4 transition-colors duration-300 ease-industrial hover:text-accent"
+              className="color-fade font-semibold text-foreground underline decoration-steel underline-offset-4 hover:text-accent"
             >
               project gallery
             </Link>

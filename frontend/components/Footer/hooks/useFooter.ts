@@ -2,10 +2,10 @@
 
 import { getCopyrightYear } from "../utils";
 
-export interface UseSiteFooterResult {
+export interface UseFooterResult {
   year: number;
 }
 
-export const useSiteFooter = (): UseSiteFooterResult => ({
+export const useFooter = (): UseFooterResult => ({
   year: getCopyrightYear(),
 });

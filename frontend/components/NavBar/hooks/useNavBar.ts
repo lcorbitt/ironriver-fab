@@ -4,13 +4,13 @@ import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "../constants";
 import { isActivePath } from "../utils";
 
-export interface UseSiteHeaderResult {
+export interface UseNavBarResult {
   pathname: string;
   navItems: typeof NAV_ITEMS;
   isActive: (href: string) => boolean;
 }
 
-export const useSiteHeader = (): UseSiteHeaderResult => {
+export const useNavBar = (): UseNavBarResult => {
   const pathname = usePathname() || "/";
 
   return {

@@ -1,21 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/cn";
-import { useSiteHeader } from "./hooks/useSiteHeader";
+import { siteConfig } from "@/lib/site";
+import { ContactInfoBanner } from "./ContactInfoBanner";
+import { useNavBar } from "./hooks/useNavBar";
 
-export const SiteHeader = () => {
-  const { navItems, isActive } = useSiteHeader();
+export const NavBar = () => {
+  const { navItems, isActive } = useNavBar();
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <ContactInfoBanner />
+      <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
         <Link
           href="/"
           className="color-fade font-display text-base font-bold uppercase tracking-[0.18em] text-foreground hover:text-accent"
         >
-          {siteConfig.businessName}
+          IR
         </Link>
 
         <nav
@@ -27,7 +29,7 @@ export const SiteHeader = () => {
               key={item.href}
               href={item.href}
               className={cn(
-                "font-display text-xs font-semibold uppercase tracking-[0.22em] text-muted transition-colors duration-300 ease-industrial hover:text-foreground",
+                "font-display color-fade text-base font-semibold uppercase tracking-[0.22em] text-muted hover:text-foreground",
                 isActive(item.href) && "text-accent",
               )}
             >
@@ -39,7 +41,7 @@ export const SiteHeader = () => {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${siteConfig.phoneE164}`}
-            className="color-fade font-display hidden h-10 items-center justify-center border-2 border-border bg-surface px-4 text-xs font-semibold uppercase tracking-widest text-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] transition-[border-color,color] duration-300 ease-industrial hover:border-accent hover:text-accent sm:inline-flex"
+            className="color-fade font-display hidden h-10 items-center justify-center border-2 border-border bg-surface px-4 text-xs font-semibold uppercase tracking-widest text-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent hover:text-accent sm:inline-flex"
           >
             Call
           </a>
@@ -56,7 +58,7 @@ export const SiteHeader = () => {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "font-display block rounded-sm px-3 py-2.5 text-xs font-semibold uppercase tracking-widest text-muted transition-colors duration-300 ease-industrial hover:bg-surface-elevated hover:text-foreground",
+                    "font-display color-fade block rounded-sm px-3 py-2.5 text-xs font-semibold uppercase tracking-widest text-muted hover:bg-surface-elevated hover:text-foreground",
                     isActive(item.href) && "bg-surface-elevated text-accent",
                   )}
                 >

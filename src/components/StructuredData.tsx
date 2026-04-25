@@ -35,28 +35,36 @@ const localBusinessJsonLd = {
     },
   ],
   priceRange: "$$",
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "07:00",
-    closes: "17:00",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      opens: "08:00",
+      closes: "17:00",
+    },
+  ],
 };
 
 const servicesJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": absoluteUrl("/#services"),
-  name: "Custom metal fabrication",
+  name: "Expert welding services in Northern Colorado & Surrounding Areas",
   provider: { "@id": absoluteUrl("/#business") },
   serviceType: [
-    "Metal fabrication",
-    "Structural steel fabrication",
-    "Welding services",
+    "Mobile Welding",
+    "Custom Fabrication",
+    "Welding Repairs",
   ],
   areaServed: siteConfig.secondaryRegion,
   description:
-    "Custom metal fabrication, structural steel, and welding for commercial and industrial projects in Berthoud and Northern Colorado.",
+    "Expert welding services in Northern Colorado & Surrounding Areas.",
 };
 
 export const StructuredData = () => (
