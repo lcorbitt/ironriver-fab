@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -16,9 +17,20 @@ export const NavBar = () => {
       <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="color-fade font-display text-base font-bold uppercase tracking-[0.18em] text-foreground hover:text-accent"
+          className="color-fade inline-flex items-center text-foreground hover:text-accent"
         >
-          IR
+          <span className="relative inline-block h-10 w-10 overflow-visible">
+            <span className="pointer-events-none absolute h-14 w-44 sm:h-20 sm:w-52 top-1/2 -translate-x-9 sm:-translate-x-12 -translate-y-8 sm:-translate-y-12">
+              <Image
+                src="/ir-logo.png"
+                alt="IronRiver Fabrication logo"
+                fill
+                sizes="(max-width: 640px) 176px, 208px"
+                className="object-contain object-left"
+                priority
+              />
+            </span>
+          </span>
         </Link>
 
         <nav

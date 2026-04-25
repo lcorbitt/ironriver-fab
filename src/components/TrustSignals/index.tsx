@@ -15,10 +15,14 @@ export const TrustSignals = () => {
 
   return (
     <section
-      className="border-b border-border bg-surface"
+      className="relative border-b border-border bg-surface"
       aria-labelledby="home-services-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center hatch-diagonal py-16 sm:py-20">
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-50 hatch-diagonal"
+        aria-hidden
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
         <Reveal className="mx-auto max-w-3xl pb-12 text-center sm:pb-14 md:pb-16">
           <h2
             id="home-services-heading"
@@ -35,7 +39,7 @@ export const TrustSignals = () => {
             <li key={column.title}>
               <Reveal>
                 <article className="flex flex-col items-center px-5 py-12 text-center sm:px-8 md:min-h-[280px] md:py-14">
-                  <div className="relative mb-6 flex h-16 w-16 shrink-0 justify-center md:mb-8 md:h-[4.25rem] md:w-[4.25rem]">
+                  <div className="relative mb-6 flex h-16 w-16 shrink-0 justify-center md:mb-8 md:h-17 md:w-17">
                     <Image
                       src={column.imageSrc}
                       alt=""
