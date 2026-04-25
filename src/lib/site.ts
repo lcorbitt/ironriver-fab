@@ -33,11 +33,11 @@ export interface SiteConfig {
 
 /** Display strings for footer and contact; keep in sync with JSON-LD where applicable. */
 export const businessHours: readonly BusinessHoursRow[] = [
-  { dayLabel: "MON", hoursLabel: "8:00am – 5:00pm" },
-  { dayLabel: "TUES", hoursLabel: "8:00am – 5:00pm" },
-  { dayLabel: "WED", hoursLabel: "8:00am – 5:00pm" },
-  { dayLabel: "THU", hoursLabel: "8:00am – 5:00pm" },
-  { dayLabel: "FRI", hoursLabel: "8:00am – 5:00pm" },
+  { dayLabel: "MON", hoursLabel: "8 AM – 5 PM" },
+  { dayLabel: "TUES", hoursLabel: "8 AM – 5 PM" },
+  { dayLabel: "WED", hoursLabel: "8 AM – 5 PM" },
+  { dayLabel: "THU", hoursLabel: "8 AM – 5 PM" },
+  { dayLabel: "FRI", hoursLabel: "8 AM – 5 PM" },
   { dayLabel: "SAT", hoursLabel: "By Appointment" },
   { dayLabel: "SUN", hoursLabel: "Closed" },
 ];

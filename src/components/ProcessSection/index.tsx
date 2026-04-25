@@ -65,7 +65,7 @@ export const ProcessSection = ({ className }: ProcessSectionProps) => {
               <Reveal>
                 <article className="flex flex-col items-center text-center">
                   <div
-                    className="flex h-22 w-22 shrink-0 items-center justify-center border-2 border-accent bg-surface-elevated/40 shadow-[inset_0_1px_0_rgb(255_255_255/0.04)] sm:h-24 sm:w-24"
+                    className="flex h-22 w-22 shrink-0 items-center justify-center border-2 border-accent bg-surface shadow-[inset_0_1px_0_rgb(255_255_255/0.04)] sm:h-24 sm:w-24"
                     aria-hidden
                   >
                     <ProcessStepGlyph iconId={step.iconId} />
