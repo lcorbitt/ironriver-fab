@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { siteConfig } from "@/lib/site";
 import { CAPABILITIES_EYEBROW } from "./constants";
 import { useServicesSection } from "./hooks/useServicesSection";
 

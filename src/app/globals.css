@@ -56,20 +56,20 @@
   }
 
   a:not([class*="color-fade"]):not([class*="transition"]) {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-600;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   button:not([class*="color-fade"]),
   [role="button"]:not([class*="color-fade"]) {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-600;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
 @layer utilities {
   .color-fade {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-600;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 

@@ -1,5 +1,10 @@
 import type { HomeServiceColumn } from "./types";
 
+export const TRUST_SIGNALS_SECTION_HEADING = "Our most popular services";
+
+export const TRUST_SIGNALS_SECTION_SUBHEAD =
+  "Convenient service. One phone call. Best pricing.";
+
 /**
  * Drop matching files in `public/service-icons/` (any square asset works;
  * WebP or PNG recommended). Filenames must match these paths.

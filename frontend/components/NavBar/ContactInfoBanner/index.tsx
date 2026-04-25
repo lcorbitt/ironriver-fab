@@ -127,7 +127,7 @@ export const ContactInfoBanner = () => {
         "relative z-20 overflow-hidden transition-[max-height,opacity,box-shadow] duration-300 ease-industrial motion-reduce:transition-none",
         isHidden
           ? "pointer-events-none max-h-0 border-b-0 bg-transparent opacity-0 shadow-none"
-          : "max-h-[6.5rem] border-b border-border/70 bg-surface opacity-100 shadow-[0_6px_20px_rgb(0_0_0/0.2)] sm:max-h-[4rem]",
+          : "max-h-16 border-b border-border/70 bg-surface opacity-100 shadow-[0_6px_20px_rgb(0_0_0/0.2)] sm:max-h-[6.5rem] md:max-h-16",
       )}
       aria-hidden={isHidden}
       inert={isHidden}
@@ -135,55 +135,56 @@ export const ContactInfoBanner = () => {
       <div
         role="region"
         aria-label="Contact shortcuts"
-        className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6 sm:py-3 lg:px-8"
+        className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6 lg:px-8"
       >
-            <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-1">
-              <p className="flex items-center gap-2 font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-foreground sm:text-xs sm:tracking-[0.16em]">
-                <IconMapPin className="shrink-0 text-accent" />
-                <span>{siteConfig.contactAddressLine}</span>
-              </p>
-              <p className="flex min-w-0 items-center gap-2 font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-foreground sm:text-xs sm:tracking-[0.16em]">
-                <IconMail className="shrink-0 text-accent" />
-                <span className="shrink-0 text-muted">
-                  {CONTACT_BANNER_EMAIL_LABEL}
-                </span>
-                <Link
-                  href={`mailto:${siteConfig.email}`}
-                  className="color-fade min-w-0 truncate text-foreground hover:text-accent"
-                >
-                  {siteConfig.email}
-                </Link>
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-              {socials.length > 0 ? (
-                <ul className="flex items-center gap-2" role="list">
-                  {socials.map(({ network, href }) => (
-                    <li key={network}>
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={socialLabel(network)}
-                        className="color-fade flex h-8 w-8 items-center justify-center rounded-sm border border-border bg-background text-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.04)] hover:border-accent hover:text-accent"
-                      >
-                        <SocialGlyph network={network} />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              <a
-                href={`tel:${siteConfig.phoneE164}`}
-                className="color-fade flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground sm:text-xs sm:tracking-[0.16em]"
-              >
-                <IconPhone className="shrink-0 text-accent" />
-                <span className="text-muted">{CONTACT_BANNER_PHONE_LABEL}</span>
-                <span className="font-mono normal-case tracking-normal hover:text-accent color-fade">
-                  {siteConfig.phoneDisplay}
-                </span>
-              </a>
-            </div>
+        <div className="hidden w-full flex-col gap-2.5 sm:flex sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-1">
+          <p className="flex items-center gap-2 font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-foreground sm:tracking-[0.16em]">
+            <IconMapPin className="shrink-0 text-accent" />
+            <span>{siteConfig.contactAddressLine}</span>
+          </p>
+          <Link
+            href={`mailto:${siteConfig.email}`}
+            className="color-fade truncate hover:text-accent flex min-w-0 items-center gap-2 font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-foreground sm:tracking-[0.16em]"
+          >
+            <IconMail className="shrink-0 text-accent" />
+            <span className="shrink-0 text-muted">{CONTACT_BANNER_EMAIL_LABEL}</span>
+            {siteConfig.email}
+          </Link>
+        </div>
+        <div className="flex w-full flex-wrap items-center justify-center gap-4 sm:w-auto sm:justify-end sm:gap-6">
+          {socials.length > 0 ? (
+            <ul
+              className="hidden items-center gap-2 sm:flex"
+              role="list"
+            >
+              {socials.map(({ network, href }) => (
+                <li key={network}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={socialLabel(network)}
+                    className="color-fade flex h-8 w-8 items-center justify-center rounded-sm border border-border bg-background text-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.04)] hover:border-accent hover:text-accent"
+                  >
+                    <SocialGlyph network={network} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <Link
+            href={`tel:${siteConfig.phoneE164}`}
+            className="ccolor-fade truncate hover:text-accent flex min-w-0 items-center gap-2 font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-foreground sm:tracking-[0.16em]"
+          >
+            <IconPhone className="shrink-0 text-accent" />
+            <span className="hidden text-muted sm:inline">
+              {CONTACT_BANNER_PHONE_LABEL}
+            </span>
+            <span className="text-foreground hover:text-accent">
+              {siteConfig.phoneDisplay}
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

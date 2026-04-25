@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow, JetBrains_Mono, Oswald } from "next/font/google";
 import { Footer } from "@frontend/components/Footer";
 import { NavBar } from "@frontend/components/NavBar";
+import { ScrollToTopOnNavigate } from "@/components/ScrollToTopOnNavigate";
 import { StructuredData } from "@/components/StructuredData";
 import { absoluteUrl, getSiteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -90,6 +91,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <StructuredData />
+        <ScrollToTopOnNavigate />
         <NavBar />
         <div className="flex-1">{children}</div>
         <Footer />

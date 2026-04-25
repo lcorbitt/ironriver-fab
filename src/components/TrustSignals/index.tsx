@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import {
+  TRUST_SIGNALS_SECTION_HEADING,
+  TRUST_SIGNALS_SECTION_SUBHEAD,
+} from "./constants";
 import { useTrustSignals } from "./hooks/useTrustSignals";
 import { SERVICE_IMAGE_INTRINSIC } from "./utils";
+import Link from "next/link";
 
 export const TrustSignals = () => {
   const { columns } = useTrustSignals();
@@ -13,11 +18,19 @@ export const TrustSignals = () => {
       className="border-b border-border bg-background py-16 sm:py-20"
       aria-labelledby="home-services-heading"
     >
-      <h2 id="home-services-heading" className="sr-only">
-        Services
-      </h2>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <ul className="grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
+        <Reveal className="mx-auto max-w-3xl pb-12 text-center sm:pb-14 md:pb-16">
+          <h2
+            id="home-services-heading"
+            className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl"
+          >
+            {TRUST_SIGNALS_SECTION_HEADING}
+          </h2>
+          <p className="mt-3 text-base font-medium leading-relaxed text-muted sm:mt-4 sm:text-lg">
+            {TRUST_SIGNALS_SECTION_SUBHEAD}
+          </p>
+        </Reveal>
+        <ul className="grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0 mb-16">
           {columns.map((column) => (
             <li key={column.title}>
               <Reveal>
@@ -47,6 +60,10 @@ export const TrustSignals = () => {
             </li>
           ))}
         </ul>
+
+        <Link href={'/contact'} className="text-base font-medium leading-relaxed text-muted sm:text-lg p-4 border-2 border-border rounded-md hover:border-accent hover:text-accent">
+          Don't see what you're looking for? Give us a call!
+        </Link>
       </div>
     </section>
   );

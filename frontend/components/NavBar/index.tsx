@@ -12,7 +12,7 @@ export const NavBar = () => {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-md">
       <ContactInfoBanner />
-      <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="color-fade font-display text-base font-bold uppercase tracking-[0.18em] text-foreground hover:text-accent"
@@ -41,9 +41,9 @@ export const NavBar = () => {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${siteConfig.phoneE164}`}
-            className="color-fade font-display hidden h-10 items-center justify-center border-2 border-border bg-surface px-4 text-xs font-semibold uppercase tracking-widest text-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent hover:text-accent sm:inline-flex"
+            className="color-fade font-display hidden h-10 items-center justify-center border-2 border-border bg-surface px-4 text-base font-semibold uppercase tracking-widest text-foreground shadow-[inset_0_1px_0_rgb(255_255_255_/_0.05)] hover:border-accent hover:text-accent sm:inline-flex"
           >
-            Call
+            Get a Quote
           </a>
           <details className="relative md:hidden">
             <summary

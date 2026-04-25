@@ -1,19 +1,23 @@
-/**
- * `scrollY` at or below this always shows the bar (also clears toggle cooldown).
- */
-export const CONTACT_BANNER_FORCE_SHOW_BELOW_PX = 14;
+/** Same breakpoint as Tailwind `sm` (640px) for threshold + responsive UI. */
+export const CONTACT_BANNER_VIEWPORT_MOBILE_MAX_WIDTH_PX = 640;
 
-/** When `scrollY` is at or above this, the bar hides (wide band avoids layout jitter). */
-export const CONTACT_BANNER_HIDE_WHEN_SCROLL_Y_GTE = 100;
+/** `scrollY` at or below: always show bar (clears cooldown). */
+export const CONTACT_BANNER_FORCE_SHOW_BELOW_PX_MOBILE = 6;
+export const CONTACT_BANNER_FORCE_SHOW_BELOW_PX_DESKTOP = 14;
+
+/** `scrollY` at or above: hide bar. */
+export const CONTACT_BANNER_HIDE_WHEN_SCROLL_Y_GTE_MOBILE = 40;
+export const CONTACT_BANNER_HIDE_WHEN_SCROLL_Y_GTE_DESKTOP = 100;
 
 /**
- * When `scrollY` is at or below this, the bar shows again.
- * Must be well below `HIDE_WHEN_SCROLL_Y_GTE` so `scrollY` noise does not cross both.
+ * `scrollY` at or below: show bar again (hysteresis; must stay below hide threshold band).
  */
-export const CONTACT_BANNER_SHOW_WHEN_SCROLL_Y_LTE = 40;
+export const CONTACT_BANNER_SHOW_WHEN_SCROLL_Y_LTE_MOBILE = 16;
+export const CONTACT_BANNER_SHOW_WHEN_SCROLL_Y_LTE_DESKTOP = 40;
 
 /** After a hide/show flip, ignore further flips for this long (ms). */
-export const CONTACT_BANNER_TOGGLE_COOLDOWN_MS = 320;
+export const CONTACT_BANNER_TOGGLE_COOLDOWN_MS_MOBILE = 240;
+export const CONTACT_BANNER_TOGGLE_COOLDOWN_MS_DESKTOP = 320;
 
 export const CONTACT_BANNER_EMAIL_LABEL = "E-mail:";
 

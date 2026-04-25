@@ -10,10 +10,11 @@ import {
 } from "./utils";
 
 export const Reveal = ({ children, className }: RevealProps) => {
-  const { isVisible } = useReveal();
+  const { ref, isVisible } = useReveal();
 
   return (
     <div
+      ref={ref}
       className={cn(
         revealTransitionClasses,
         isVisible ? revealVisibleClasses : revealHiddenClasses,

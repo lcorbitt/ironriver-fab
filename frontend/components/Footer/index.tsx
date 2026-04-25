@@ -3,7 +3,7 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import { businessHours, siteConfig } from "@/lib/site";
-import { FOOTER_LINKS } from "./constants";
+import { FOOTER_MENU_LINKS, FOOTER_QUICK_LINKS } from "./constants";
 import { useFooter } from "./hooks/useFooter";
 
 export const Footer = () => {
@@ -12,7 +12,7 @@ export const Footer = () => {
   return (
     <footer className="border-t-2 border-border bg-surface">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md space-y-4">
             <p className="font-display text-lg font-bold uppercase tracking-[0.2em] text-foreground">
               {siteConfig.businessName}
@@ -22,15 +22,71 @@ export const Footer = () => {
               precision fabrication, and industrial installations. Our experienced crew brings skill, safety,
               and service excellence to every project.
             </p>
+            <div className="pt-2 space-y-2">
+              <a
+                href={`tel:${siteConfig.phoneE164}`}
+                className="color-fade block text-sm font-medium text-white hover:text-accent w-max"
+              >
+                {siteConfig.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="color-fade block text-sm font-medium text-white hover:text-accent w-max"
+              >
+                {siteConfig.email}
+              </a>
+            </div>
           </div>
+          <nav
+            aria-label="Footer menu"
+            className="lg:border-l-2 lg:border-border lg:pl-8"
+          >
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
+              Menu
+            </p>
+            <div className="mt-3 h-px w-12 bg-accent/80" aria-hidden />
+            <ul className="mt-4 space-y-2">
+              {FOOTER_MENU_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="font-display color-fade text-xs font-semibold uppercase tracking-[0.18em] text-foreground hover:text-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav
+            aria-label="Footer quick links"
+            className="lg:border-l-2 lg:border-border lg:pl-8"
+          >
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
+              Quick links
+            </p>
+            <div className="mt-3 h-px w-14 bg-accent/80" aria-hidden />
+            <ul className="mt-4 space-y-2">
+              {FOOTER_QUICK_LINKS.map((link) => (
+                <li key={link.href + link.label}>
+                  <Link
+                    href={link.href}
+                    className="font-display color-fade text-xs font-semibold uppercase tracking-[0.18em] text-foreground hover:text-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <div className="lg:border-l-2 lg:border-border lg:pl-8">
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-muted">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
               Hours
             </p>
-            <dl className="mt-4 grid grid-cols-[minmax(0,auto)_1fr] gap-x-6 gap-y-2 text-sm tabular-nums text-muted">
+            <dl className="mt-4 grid grid-cols-[minmax(0,auto)_1fr] gap-x-2 gap-y-3 text-xs tabular-nums text-muted">
               {businessHours.map((row) => (
                 <Fragment key={row.dayLabel}>
-                  <dt className="font-medium text-foreground">
+                  <dt className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
                     {row.dayLabel}:
                   </dt>
                   <dd>{row.hoursLabel}</dd>
@@ -38,32 +94,6 @@ export const Footer = () => {
               ))}
             </dl>
           </div>
-          <nav
-            aria-label="Footer"
-            className="flex flex-col gap-3 border-l-2 border-border pl-8 text-sm lg:min-w-48"
-          >
-            {FOOTER_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-display color-fade text-xs font-semibold uppercase tracking-widest text-muted hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={`tel:${siteConfig.phoneE164}`}
-              className="color-fade font-mono text-sm font-medium text-accent hover:text-accent-hover"
-            >
-              {siteConfig.phoneDisplay}
-            </a>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="color-fade text-muted hover:text-foreground"
-            >
-              {siteConfig.email}
-            </a>
-          </nav>
         </div>
         <p className="mt-14 border-t border-border pt-8 font-mono text-[11px] uppercase tracking-widest text-steel">
           © 2019-{year} {siteConfig.legalName}. Northern Colorado & Surrounding Areas.
