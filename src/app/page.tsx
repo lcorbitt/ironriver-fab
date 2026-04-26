@@ -32,8 +32,8 @@ export default function HomePage() {
       <TrustSignals />
       <GalleryPreview />
       <WhyChooseUsSection />
-      <ProcessSection />
-      <ServicesSection />
+      {/* <ProcessSection /> */}
+      {/* <ServicesSection /> */}
       <TestimonialsSection />
       <FaqSection />
       <CtaStrip />
