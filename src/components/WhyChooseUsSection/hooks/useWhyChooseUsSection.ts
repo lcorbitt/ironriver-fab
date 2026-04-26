@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { computeParallaxTranslateY } from "../utils";
 
-const PARALLAX_MAX_TRANSLATE_PX = 48;
+const PARALLAX_MAX_TRANSLATE_PX = 120;
 
 export interface UseWhyChooseUsSectionResult {
   parallaxContainerRef: React.RefObject<HTMLDivElement | null>;

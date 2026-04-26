@@ -60,30 +60,30 @@ export const HeroSection = () => {
           <p className="font-mono text-xs uppercase tracking-widest text-accent drop-shadow-[0_1px_8px_rgb(0_0_0_/_0.5)]">
             Mobile Welding · Custom Fabrication · Repairs
           </p>
-        </Reveal>
 
-        <Reveal className="mt-10 flex w-full max-w-md flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center lg:mt-12">
-          {ctas.map((cta) => {
-            const external = isExternalCta(cta);
-            const className = cn(
-                  "font-display color-fade inline-flex h-14 min-h-14 flex-1 items-center justify-center border-2 px-6 text-xs font-semibold uppercase tracking-[0.18em] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.06)] transition-transform duration-300 ease-industrial active:translate-y-px sm:px-8 sm:text-sm sm:tracking-[0.2em]",
-              cta.variant === "primary" &&
-                "border-accent hover:border-border/90 bg-accent text-accent-foreground hover:bg-surface hover:text-accent",
-              cta.variant === "secondary" &&
-                "border-border/90 bg-surface/90 text-foreground shadow-[0_8px_32px_rgb(0_0_0_/_0.35)] backdrop-blur-sm hover:border-steel-bright hover:bg-surface",
-            );
-            if (external)
+          <div className="mt-10 flex w-full max-w-md flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center lg:mt-12">
+            {ctas.map((cta) => {
+              const external = isExternalCta(cta);
+              const className = cn(
+                    "font-display color-fade inline-flex h-14 min-h-14 flex-1 items-center justify-center border-2 px-6 text-xs font-semibold uppercase tracking-[0.18em] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.06)] transition-transform duration-300 ease-industrial active:translate-y-px sm:px-8 sm:text-sm sm:tracking-[0.2em]",
+                cta.variant === "primary" &&
+                  "border-accent hover:border-border/90 bg-accent text-accent-foreground hover:bg-surface hover:text-accent",
+                cta.variant === "secondary" &&
+                  "border-border/90 bg-surface/90 text-foreground shadow-[0_8px_32px_rgb(0_0_0_/_0.35)] backdrop-blur-sm hover:border-steel-bright hover:bg-surface",
+              );
+              if (external)
+                return (
+                  <Link target="_blank" key={cta.href} href={cta.href} className={className}>
+                    {cta.label}
+                  </Link>
+                );
               return (
-                <Link target="_blank" key={cta.href} href={cta.href} className={className}>
+                <Link key={cta.href} href={cta.href} className={className}>
                   {cta.label}
                 </Link>
               );
-            return (
-              <Link key={cta.href} href={cta.href} className={className}>
-                {cta.label}
-              </Link>
-            );
-          })}
+            })}
+          </div>
         </Reveal>
       </div>
     </section>

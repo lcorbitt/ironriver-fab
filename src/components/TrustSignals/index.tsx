@@ -54,7 +54,7 @@ export const TrustSignals = () => {
                       width={SERVICE_IMAGE_INTRINSIC.width}
                       height={SERVICE_IMAGE_INTRINSIC.height}
                       sizes="(min-width: 768px) 4.25rem, 4rem"
-                      className="object-contain"
+                      className="object-contain mix-blend-screen opacity-90"
                     />
                   </div>
                   <h3 className="font-sans text-lg font-bold tracking-tight text-foreground sm:text-xl">

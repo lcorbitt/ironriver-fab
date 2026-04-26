@@ -18,7 +18,7 @@ export const NavBar = () => {
   } = useNavBar();
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b-2 border-border bg-background backdrop-blur-md">
       <ContactInfoBanner />
       <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link

@@ -2,13 +2,12 @@
 
 /* Warm charcoal, oxidized copper, steel — contractor / fab shop palette */
 :root {
-  --background: #0f0e0c;
+  --background: #11100c;
   --foreground: #ebe6e0;
   --muted: #8f8983;
   --surface: #181614;
   --surface-elevated: #22201c;
-  --accent: #c4552c;
-  --accent-hover: #d66a3f;
+  --accent: #b78d64;
   --accent-foreground: #0c0b0a;
   --ring: #c4552c;
   --border: #2e2b27;

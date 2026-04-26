@@ -37,7 +37,7 @@ export default function ContactPage() {
             Prefer the phone? Call{" "}
             <a
               href={`tel:${siteConfig.phoneE164}`}
-              className="color-fade font-semibold text-accent underline decoration-accent/40 underline-offset-4 hover:text-accent-hover"
+              className="color-fade font-semibold text-accent/80 underline decoration-accent/40 underline-offset-4 hover:text-accent"
             >
               {siteConfig.phoneDisplay}
             </a>{" "}

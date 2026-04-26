@@ -1,6 +1,6 @@
 import type { ProcessStep } from "./types";
 
-export const PROCESS_SECTION_HEADING = "Our fabrication process";
+export const PROCESS_SECTION_HEADING = "Behind the Process";
 
 export const PROCESS_STEPS: readonly ProcessStep[] = [
   {

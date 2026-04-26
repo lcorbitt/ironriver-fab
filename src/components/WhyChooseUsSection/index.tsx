@@ -125,7 +125,7 @@ export const WhyChooseUsSection = ({ className }: WhyChooseUsSectionProps) => {
           </div>
         </div>
 
-        <div className="relative min-h-88 overflow-hidden bg-surface lg:col-span-1">
+        <div className="relative hidden min-h-88 overflow-hidden bg-surface lg:col-span-1 lg:block">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
             <div className="absolute inset-0 scale-135">
               <Image

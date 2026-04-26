@@ -1,8 +1,8 @@
 import type { WhyChooseUsBenefit, WhyChooseUsCallout } from "./types";
 
-export const WHY_CHOOSE_US_EYEBROW = "Why choose us";
+export const WHY_CHOOSE_US_EYEBROW = "Your Ideal Choice";
 
-export const WHY_CHOOSE_US_HEADING = "Urgent Repairs. Clean Fabrication. Done Right.";
+export const WHY_CHOOSE_US_HEADING = "Why Choose Us";
 
 export const WHY_CHOOSE_US_BODY =
   "When timelines are tight, you need a crew that shows up prepared, communicates clearly, and delivers work you can trust in the field.";

@@ -35,7 +35,7 @@ export const ServicesSection = () => {
             Planning a build? Start with a{" "}
             <Link
               href="/contact"
-              className="color-fade font-semibold text-accent underline decoration-accent/40 underline-offset-4 hover:text-accent-hover"
+              className="color-fade font-semibold text-accent/90 underline decoration-accent/40 underline-offset-4 hover:text-accent"
             >
               detailed quote request
             </Link>{" "}
