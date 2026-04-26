@@ -17,14 +17,14 @@ export const CtaStrip = ({ className }: CtaStripProps) => {
           <div
             className={cn(
               ctaStripBandClasses,
-              "relative flex flex-col items-start gap-6 overflow-hidden p-10 sm:p-12 md:flex-row md:items-center md:justify-between",
+              "relative flex flex-col items-center lg:items-start gap-6 overflow-hidden p-10 sm:p-12 md:flex-row md:items-center md:justify-between",
             )}
           >
             <div
               className="pointer-events-none absolute inset-0 opacity-25 hatch-diagonal"
               aria-hidden
             />
-            <div className="relative z-10 flex w-full flex-col gap-6 md:max-w-3xl">
+            <div className="relative z-10 flex w-full flex-col gap-6 md:max-w-3xl text-center lg:text-left">
               <h2 className="font-display text-2xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-3xl">
                 {headline}
               </h2>
