@@ -31,7 +31,7 @@ export const TrustSignals = () => {
         <div className="absolute inset-0 bg-background/95" />
       </div>
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
-        <Reveal className="mx-auto max-w-3xl pb-12 text-center sm:pb-14 md:pb-16">
+        <Reveal className="mx-auto max-w-3xl pb-0 text-center md:pb-16">
           <h2
             id="home-services-heading"
             className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-foreground sm:text-4xl"

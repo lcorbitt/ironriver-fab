@@ -18,13 +18,17 @@ export const Footer = () => {
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md space-y-4">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
+              Company
+            </p>
+            <div className="mt-3 h-px w-19 bg-accent/80" aria-hidden />
             <p className="font-display text-lg font-bold uppercase tracking-[0.2em] text-foreground">
               {siteConfig.businessName}
             </p>
             <p className="text-sm leading-relaxed text-muted">
-              IronRiver Fabrication has served Northern Colorado since 2019 with certified welding,
+              IronRiver Fabrication has served Northern Colorado since 2019 with expert welding,
               precision fabrication, and industrial installations. Our experienced crew brings skill, safety,
-              and service excellence to every project.
+              and excellence to every project.
             </p>
             <div className="pt-2 space-y-2">
               <a
@@ -48,7 +52,7 @@ export const Footer = () => {
             <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
               Menu
             </p>
-            <div className="mt-3 h-px w-10 bg-accent/80" aria-hidden />
+            <div className="mt-3 h-px w-11 bg-accent/80" aria-hidden />
             <ul className="mt-4 space-y-2">
               {FOOTER_MENU_LINKS.map((link) => (
                 <li key={link.href}>
@@ -69,7 +73,7 @@ export const Footer = () => {
             <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-muted">
               Quick Links
             </p>
-            <div className="mt-3 h-px w-26 bg-accent/80" aria-hidden />
+            <div className="mt-3 h-px w-27 bg-accent/80" aria-hidden />
             <ul className="mt-4 space-y-2">
               {FOOTER_QUICK_LINKS.map((link) => (
                 <li key={link.href + link.label}>

@@ -127,7 +127,7 @@ export const FaqSection = ({ className }: FaqSectionProps) => {
               <p className="font-sans text-sm font-semibold leading-relaxed text-foreground sm:text-base">
                 {FAQ_SERVICE_AREA_HEADING}
               </p>
-              <ul className="mx-auto mt-6 grid max-w-5xl grid-cols-1 justify-items-center gap-x-10 gap-y-3 text-sm text-muted sm:grid-cols-2 sm:text-base lg:grid-cols-3">
+              <ul className="mx-auto mt-6 grid max-w-5xl grid-cols-2 justify-items-center gap-x-10 gap-y-3 text-sm text-muted sm:grid-cols-2 sm:text-base lg:grid-cols-3">
                 {FAQ_SERVICE_AREA_CITIES.map((city) => (
                   <li key={city} className="flex items-start gap-3">
                     <span
