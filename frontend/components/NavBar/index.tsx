@@ -48,7 +48,7 @@ export const NavBar = () => {
               key={item.href}
               href={item.href}
               className={cn(
-                "font-display color-fade text-base font-semibold uppercase tracking-[0.22em] text-muted hover:text-foreground",
+                "font-display color-fade text-base font-semibold uppercase tracking-[0.22em] text-muted hover:text-accent",
                 isActive(item.href) && "text-accent",
               )}
             >
