@@ -64,7 +64,7 @@ export const TestimonialsSection = ({
                     >
                       &ldquo;
                     </span>
-                    <p className="-mt-2 text-[11px] font-medium leading-relaxed text-foreground/90 sm:text-base">
+                    <p className="-mt-2 font-medium leading-relaxed text-foreground/90 text-base">
                       {item.quote}
                     </p>
                   </blockquote>
