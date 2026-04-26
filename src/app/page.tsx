@@ -6,6 +6,8 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { TrustSignals } from "@/components/TrustSignals";
+import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
+import { FaqSection } from "@/components/FaqSection";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,9 +31,11 @@ export default function HomePage() {
       <HeroSection />
       <TrustSignals />
       <GalleryPreview />
+      <WhyChooseUsSection />
       <ProcessSection />
       <ServicesSection />
       <TestimonialsSection />
+      <FaqSection />
       <CtaStrip />
     </main>
   );

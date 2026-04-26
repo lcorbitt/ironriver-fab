@@ -20,7 +20,7 @@ export const TESTIMONIALS: readonly Testimonial[] = [
   {
     id: "t1",
     quote:
-      "If you need custom window well covers, talk to Reece Gazdik at IronRiver Fabrication. Easy to work with, fast scheduling, and they installed the day after our first measurements with clear updates.",
+      "If you need custom window well covers, talk to Reece at IronRiver Fabrication. Easy to work with, fast scheduling, and they installed the day after our first measurements with clear updates.",
     name: "James H.",
     detail: "Residential",
     rating: 5,
@@ -28,7 +28,7 @@ export const TESTIMONIALS: readonly Testimonial[] = [
   {
     id: "t2",
     quote:
-      "Shout out to Reece Gazdik and IronRiver Fabrication for custom fitted window well covers that fit right. If you need that work, we recommend them ten out of ten and would call them again next time.",
+      "Shout out to Reece and IronRiver Fabrication for custom fitted window well covers that fit right. If you need that work, we recommend them ten out of ten and would call them again next time.",
     name: "Kile W.",
     detail: "Residential",
     rating: 5,

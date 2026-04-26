@@ -100,7 +100,7 @@ export const Footer = () => {
             </dl>
           </div>
         </div>
-        <div className="mt-14 flex flex-col items-center justify-center gap-3 border-t border-border pt-8 text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
+        <div className="mt-14 flex flex-col items-center justify-center gap-3 border-t border-border pt-8 text-center sm:justify-between sm:gap-4 sm:text-left">
           <p className="font-mono text-[11px] uppercase tracking-widest text-steel">
             © 2019-{year} {siteConfig.legalName}. Northern Colorado & Surrounding
             Areas.

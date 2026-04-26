@@ -13,7 +13,7 @@ export const HOME_SERVICE_COLUMNS: readonly HomeServiceColumn[] = [
   {
     imageSrc: "/torch.png",
     title: "Mobile Welding",
-    body: "We are equipped with a mobile welding unit that can travel to your site to weld, fabricate, and repair your metal projects.",
+    body: "Got yourself in a bind? We are equipped with a mobile welding unit that can travel to your site to weld, fabricate, and repair your metal projects.",
   },
   {
     imageSrc: "/fabricate.png",

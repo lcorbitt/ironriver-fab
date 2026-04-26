@@ -70,9 +70,6 @@ export const GalleryPreview = ({ className }: GalleryPreviewProps) => {
                   aria-hidden
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 border-t-2 border-accent/80 bg-background/90 p-4 backdrop-blur-[2px]">
-                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-steel-bright">
-                    On the floor
-                  </p>
                   <p className="mt-1 font-display text-sm font-bold uppercase tracking-wide text-foreground">
                     {item.title}
                   </p>
